@@ -1,6 +1,6 @@
 default: crush
 
-PREFIX=/usr/local
+PREFIX?=/usr/local
 
 #crush: crush.o
 #	${CC} -s -o crush crush.o -ltestu01 -lprobdist -lmylib -lm
@@ -14,5 +14,5 @@ crush.o: crush.c
 .PHONY: install
 
 install: crush
-	mkdir -p ${PREFIX}/bin/ \
+	mkdir -p ${PREFIX}/bin/; \
 	cp crush ${PREFIX}/bin/crush
